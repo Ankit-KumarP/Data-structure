@@ -1,5 +1,5 @@
 // (19/09/23), 19:25, (20/09/23), 8.54am
-package BinaryTree;
+package datastructure.BinaryTree;
 
 import java.util.*;
 import java.lang.*;

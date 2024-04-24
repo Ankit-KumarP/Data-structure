@@ -1,5 +1,5 @@
 // ( 03/10/23, 20:05 )
-package Graph;
+package datastructure.Graph;
 
 import java.util.*;
 import java.lang.*;
