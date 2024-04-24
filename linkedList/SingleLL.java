@@ -18,6 +18,18 @@ class LinkedList {
         }
     }
 
+    // size
+    public void size() {
+        Node cNode = head;
+        int size = 0;
+
+        while (cNode != null) {
+            size++;
+            cNode = cNode.next;
+        }
+        System.out.println(size);
+    }
+
     // print
     public void print() {
         Node temp = head;
@@ -25,6 +37,7 @@ class LinkedList {
             System.out.print(temp.val + " ");
             temp = temp.next;
         }
+        System.out.println();
     }
 
     // addFirst
@@ -76,6 +89,47 @@ class LinkedList {
         }
     }
 
+    // addAtPosition
+    public void addAtPosition(int position, int val) {
+
+        Node newNode = new Node(val);
+        if (position == 0) {
+            newNode.next = head;
+            head = newNode;
+        }
+
+        Node prev = head;
+        int ptr = 1;
+        while (ptr < position) {
+            prev = prev.next;
+            ptr++;
+        }
+        if (prev.next == null) {
+            prev.next = newNode;
+            return;
+        }
+        Node nextNode = prev.next.next;
+        prev.next = newNode;
+        newNode.next = nextNode;
+
+    }
+
+    // deleteNode
+    public void deleteNode(int position) {
+
+        if (position == 0) {
+            head = head.next;
+            return;
+        }
+        int ptr = 1;
+        Node cNode = head;
+        while (ptr < position) {
+            cNode = cNode.next;
+            ptr++;
+        }
+        cNode.next = cNode.next.next;
+    }
+
 }
 
 public class SingleLL {
@@ -88,14 +142,20 @@ public class SingleLL {
         l1.addLast(2);
         l1.addLast(3);
         l1.addLast(4);
+        l1.addLast(5);
 
-        l1.addFirst(-1);
-        l1.addFirst(-2);
-        l1.addFirst(-3);
-        l1.addFirst(-4);
+        // l1.addFirst(-1);
+        // l1.addFirst(-2);
+        // l1.addFirst(-3);
+        // l1.addFirst(-4);
 
-        l1.removeFirst();
-        l1.removeLast();
+        // l1.removeFirst();
+        // l1.removeLast();
+
+        // l1.addAtPosition(4, 100);
+        // l1.deleteNode(4);
+
+        l1.size();
         l1.print();
 
     }
