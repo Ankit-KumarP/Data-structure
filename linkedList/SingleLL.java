@@ -109,8 +109,8 @@ class LinkedList {
             return;
         }
         Node nextNode = prev.next.next;
-        prev.next = newNode;
         newNode.next = nextNode;
+        prev.next = newNode;
 
     }
 
@@ -152,7 +152,7 @@ public class SingleLL {
         // l1.removeFirst();
         // l1.removeLast();
 
-        // l1.addAtPosition(4, 100);
+        l1.addAtPosition(4, 100);
         // l1.deleteNode(4);
 
         l1.size();
